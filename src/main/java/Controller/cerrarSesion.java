@@ -5,8 +5,6 @@
  */
 package Controller;
 
-import Dto.Tienda;
-import Negocio.Tiendas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author USUARIO
  */
-public class registrarController extends HttpServlet {
+public class cerrarSesion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +30,8 @@ public class registrarController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        request.getSession().invalidate();
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -61,24 +60,7 @@ public class registrarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String n = request.getParameter("nom");
-        String d = request.getParameter("des");
-        String p = request.getParameter("pro");
-        String l = request.getParameter("lem");
-        String f = request.getParameter("fac");
-        String web = request.getParameter("web");
-        String img = request.getParameter("img");
-        String email = request.getParameter("ema");
-        String clave = request.getParameter("cla");
-        
-        Tienda t = new Tienda(n, l,d, email, clave, p, f, web, img);
-        Tiendas ts = new Tiendas();
-        if (ts.registrarTienda(t)) {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("./jsp/Error.jsp").forward(request, response);
-        }
-        
+        processRequest(request, response);
     }
 
     /**

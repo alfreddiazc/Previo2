@@ -6,10 +6,12 @@
 package Controller;
 
 import Dto.Cliente;
+import Dto.Servicio;
 import Dto.Tienda;
 import Negocio.Tiendas;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -69,13 +71,15 @@ public class loginController extends HttpServlet {
         Tiendas t=new Tiendas();
         Cliente c=t.FindCliente(email,clave);
         Tienda ts=t.FindTienda(email, clave);
+        
         if(c !=null ){
             request.getSession().setAttribute("Cliente",c);
             request.getRequestDispatcher("./jsp/serviciosCliente.jsp").forward(request, response);
         }
         else if(ts != null){
-            
-             request.getSession().setAttribute("Tienda",ts);
+            List<Servicio> lst;
+            lst=t.getServiciosTienda(ts);
+             request.getSession().setAttribute("ListServicio",lst);
              request.getRequestDispatcher("./jsp/serviciosTienda.jsp").forward(request, response);
        
         }

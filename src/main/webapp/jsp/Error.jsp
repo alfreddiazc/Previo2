@@ -14,6 +14,6 @@
     <body>
         <h1>Lo siento a ocurrido un error</h1>
         <h2>404</h2>
-        <a href="../index.html">ir a Inicio</a>
+        <a href="../index.jsp">ir a Inicio</a>
     </body>
 </html>
