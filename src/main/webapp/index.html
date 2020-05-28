@@ -1,10 +1,122 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <link rel="stylesheet" href="css/Stile.css">
+    <script src="js/myScritp.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Document</title>
+</head>
+<body>      
+    <div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="col-12 user-img">
+                        <img src="img/user.png"/>
+                    </div>
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal3Label">Iniciar sesion</h5>
+                  </div>
+                    <form action="loginController" method="POST">
+                    <div class="modal-body">
+        
+                      <div class="form-group" id="user-group">
+                        <label for="formGroupExampleInput">Usuario</label>
+                        <input name="codigo" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                      </div>
+                      <div class="form-group" id="contrasena-group">
+                        <label for="formGroupExampleInput2">Contraseña</label>
+                        <input name="clave" type="password" class="form-control" id="formGroupExampleInput2" placeholder="****">
+                      </div>
+        
+                    </div>
+                    <div class="col-12 forgot">
+                        <a href="#">Recordar contrasena?</a>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal4">Registrar tienda</button>
+                      <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+                    </div>
+                  </form>
+                </div>
+              </div></div>
+    </div>
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModal4Label"
+            aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModal4Label">Registro de Tienda</h5>
+                  
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                  <form action="registrarController" method="POST">
+                  <div class="modal-body">
+
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Nombre</label>
+                      <input name="nom" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                    </div>
+                      <div class="form-group">
+                      <label for="formGroupExampleInput">Lema</label>
+                      <input name="lem" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                    </div>
+                      <div class="form-group">
+                      <label for="formGroupExampleInput">Descripcion</label>
+                      <input name="des" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                    </div>
+                    
+                      <div class="form-group">
+                      <label for="formGroupExampleInput2">Email</label>
+                      <input name="ema" type="email" class="form-control" id="formGroupExampleInput2"
+                        placeholder="ejemplo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">Contraseña</label>
+                      <input name="cla" type="password" class="form-control" id="formGroupExampleInput2" placeholder="****">
+                    </div>
+                      <div class="form-group">
+                      <label for="formGroupExampleInput">Propietario</label>
+                      <input name="pro" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                    </div>
+                        <div class="form-group">
+                      <label for="formGroupExampleInput">Facebook</label>
+                      <input name="fac" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                    </div>
+                        <div class="form-group">
+                      <label for="formGroupExampleInput">Web</label>
+                      <input name="web" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                    </div>
+                        <div class="form-group">
+                      <label for="formGroupExampleInput">Imagen</label>
+                      <input name="img" type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Registrar tienda</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+
+</body>
 </html>
